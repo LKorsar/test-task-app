@@ -8,17 +8,11 @@ export const myStateMachine = createMachine({
       initial: 'full',
       states: {
         mini: {
-          meta: {
-            description: 'The video is just a small image',
-          },
           on: {
-            toggleButton: 'full',
+            toggleButton:  'full',
           }
         },
         full: {
-          meta: {
-            description: 'Full-screen video',
-          },
           on: {
             toggleButton: 'mini',
           },
@@ -31,7 +25,7 @@ export const myStateMachine = createMachine({
         playing: {
           on: {
             togglePlayPauseBtn: 'paused',
-          },
+            },
         },
         paused: {
           on: {

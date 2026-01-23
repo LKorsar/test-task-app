@@ -26,7 +26,7 @@ function ModalPlayer ({ open, onClose, videoURL }: ModalPlayerProps) {
   const isFullDisplay = state.matches({ displayMode: 'full' });
   const isMiniDisplay = state.matches({ displayMode: 'mini' });
 
-  const [hasInteracted, setHasInteracted] = useState(false);
+  const [lastClicked, setLastClicked] = useState<'play' | 'display' | null>(null);
 
   const handleTogglePlay = () => {
     if (videoRef.current) {
@@ -36,16 +36,17 @@ function ModalPlayer ({ open, onClose, videoURL }: ModalPlayerProps) {
         videoRef.current.play();
       }
     }
+    setLastClicked('play');
     send({ type: 'togglePlayPauseBtn' });
   };
 
   const handleToggleDisplay = () => {
-    setHasInteracted(true);
+    setLastClicked('display');
     send({ type: 'toggleButton' });
   };
 
-  const isPlayButtonActive = hasInteracted && isPlaying;
-  const isDisplayButtonActive = hasInteracted && isFullDisplay;
+  const isPlayButtonActive = lastClicked === 'play';
+  const isDisplayButtonActive = lastClicked === 'display';
 
   const modalFooter = [
     <Button

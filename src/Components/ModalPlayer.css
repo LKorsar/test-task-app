@@ -27,7 +27,7 @@
 
 .modal-player .ant-modal-footer {
   background-color: #fff !important;
-  border-top: 1px solid #333 !important;
+  border-top: 1px solid #f0f0f0 !important;
   padding: 16px 24px !important;
   display: flex !important;
   justify-content: flex-end !important;
@@ -60,7 +60,7 @@
   border-color: #8585ff !important;
   box-shadow: 0 0 0 2px rgba(133, 133, 255, 0.4) !important;
   background-color: #fff !important;
-  color: #333 !important;
+  color: #8585ff !important;
 }
 
 .modal-player .ant-btn .anticon {
@@ -83,5 +83,6 @@
 }
 
 .mini-player-modal .ant-modal-body {
+  background-color: #fff !important;
   height: 225px !important;
 }
