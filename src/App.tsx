@@ -1,7 +1,8 @@
 import { PlayCircleOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import './App.css'
-import ModalPlayer from './Components/Modal';
+import ModalPlayer from './Components/ModalPlayer';
+import VideoFile from './assets/VideoFile.mp4';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,7 +21,7 @@ function App() {
           onClick={showModal}
         />
       </div>
-      <ModalPlayer open={isModalOpen} onClose={closeModal} />
+      <ModalPlayer open={isModalOpen} onClose={closeModal} videoURL={VideoFile} />
     </div>
   )
 }
